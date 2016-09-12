@@ -1,15 +1,14 @@
 $(document).ready(function() {
-	for(var i = 1; i < 101; i++) {
-		if (i % 3 == 0 && i % 5 == 0) {
-			$("body").append("<p>fizzbuzz</p>");
+	var userNumber;
+	$("form").submit(function(event) {
+		event.preventDefault();
+		userNumber = $("input").val();
+		userNumber = parseInt(userNumber);
+
+		for(var i = 1; i < (userNumber + 1); i++) {
+			console.log(i);
 		}
-		else if (i % 5 == 0) {
-			$("body").append("<p>buzz</p>");
-		}
-		else if (i % 3 == 0) {
-			$("body").append("<p>fizz</p>");
-		}
-		else
-			$("body").append("<p>" + i + "</p>");
-	}
+
+		$(this)[0].reset();
+	});
 });
